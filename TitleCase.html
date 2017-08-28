@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head  lang="en">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <script type="text/javascript">
+	 
+	  
+	   
+	   function capitalize()
+		{
+		 var s = arguments;
+		 alert (typeof s);
+		  return s[0].toUpperCase() + s.slice(1);
+		}
+	 
+	
+	    function conversion()
+		{
+	       var mySentence  = document.getElementById("toConvertText").value;
+		   var secondArray = [];
+		   
+		   var myNewSentence = "";
+		   
+		   //Item in each array
+           var myArray = mySentence.split(" ");
+		   
+           for (var i = 0; i < myArray.length; i++)
+               {
+			     var myThing = myArray[i];
+				  secondArray = myThing.split("");
+				 myNewSentence += (secondArray[0].toUpperCase() + secondArray.splice(1).join("")+ " ")  ;
+				   
+               }
+			   document.getElementById("result").value = myNewSentence;		
+		}
+		
+		
+	     
+	 </script>
+</head>
+<body>
+	        <label>Text Here:</label><input type="text" id = "toConvertText" ><br/><br/><br/>
+			<label>Conversion:</label><input type="text" id = "result" ><br/><br/><br/>
+			<button type="submit" onclick="conversion()">Submit</button>
+</body>
+</html>
